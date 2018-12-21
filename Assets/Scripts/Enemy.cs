@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
-public class Enemy : MonoBehaviour
+public class Enemy : Character
 {
 
     UnityEngine.AI.NavMeshAgent pathfinder;
 
     Transform target;
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
         pathfinder = GetComponent<UnityEngine.AI.NavMeshAgent>();
         target = FindObjectOfType<Player>().transform;
 

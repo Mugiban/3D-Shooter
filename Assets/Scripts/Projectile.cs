@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
 
     public float moveSpeed = 20f;
+    public float damage = 1f;
 
     public LayerMask collisionMask;
 
@@ -25,13 +26,16 @@ public class Projectile : MonoBehaviour
         Ray ray = new Ray(transform.position, transform.forward);
 
         if(Physics.Raycast(ray, out hit, moveDistance, collisionMask, QueryTriggerInteraction.Collide)) {
-            Debug.Log("Hitting");
             OnHitObject(hit);
         }
 
     }
 
     void OnHitObject(RaycastHit newHit) {
+        var damageable = newHit.collider.GetComponent<IDamageable>();
+        if(damageable!=null) {
+            damageable.TakeDamage(damage, newHit);
+        }
         Destroy(this.gameObject);
     }
 }
