@@ -15,11 +15,18 @@ public class Character : MonoBehaviour, IDamageable {
     }
 
     public void TakeDamage(float damage, RaycastHit hit) {
+        //do some stuff with the hit variable
+        TakeDamage(damage);
+    }
+
+    public void TakeDamage(float damage) {
         health -= damage;
-        if(health<=0 && !dead) {
+        if (health <= 0 && !dead) {
             Die();
         }
     }
+
+
 
     public void Die() {
         dead = true;
