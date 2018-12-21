@@ -48,7 +48,6 @@ public class Enemy : Character {
     void OnTargetDeath() {
         hasTarget = false;
         currentState = State.Idle;
-        Debug.Log("Hola");
     }
 
     void Update() {

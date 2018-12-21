@@ -24,6 +24,7 @@ public class Player : Character
     {
         //Movement input
         moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+   
         Vector3 moveVelocity = (moveInput * moveSpeed);
         controller.Move(moveVelocity);
 

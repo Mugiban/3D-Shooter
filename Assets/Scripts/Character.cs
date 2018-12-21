@@ -5,6 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour, IDamageable {
 
     public float startingHealth = 100f;
+    [SerializeField]
     protected float health;
     protected bool dead = false;
 
