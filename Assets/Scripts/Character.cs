@@ -28,7 +28,7 @@ public class Character : MonoBehaviour, IDamageable {
     }
 
 
-
+    [ContextMenu("Self Destruct")]
     public void Die() {
         dead = true;
         if(OnDeath!=null) {
