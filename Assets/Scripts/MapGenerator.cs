@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 
 public class MapGenerator : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class MapGenerator : MonoBehaviour {
     public Transform navmeshFloor;
     public Transform navmeshMaskPrefab;
     public Vector2 maxMapSize;
+
 
     [Range(0, 1)]
     public float outlinePercent;
@@ -31,6 +33,7 @@ public class MapGenerator : MonoBehaviour {
     void OnNewWave(int waveNumber) {
         mapIndex = waveNumber - 1;
         GenerateMap();
+
     }
 
     public void GenerateMap() {

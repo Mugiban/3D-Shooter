@@ -11,7 +11,6 @@ public static class Utilities
             array[randomIndex] = array[i];
             array[i] = tempItem;
         }
-
         return array;
     }
 }
